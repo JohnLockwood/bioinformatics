@@ -1,0 +1,24 @@
+---
+title: "Getting Started With R And Quarto"
+author: "John Lockwood"
+format: html
+editor: visual
+---
+
+# This is some markdown
+
+Of course. Let's try a simple R code block:
+
+```{r}
+print("Hello!")
+```
+
+And now some python, using our installed Conda environment, which RStudio graciously agreed to read from environment.yml? We can hope...
+
+```{python}
+import numpy as np
+print("Hello!")
+print("Numpy version:", np.__version__)
+```
+
+\
