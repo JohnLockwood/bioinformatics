@@ -37,10 +37,79 @@ Validity vs reliability. Validity: Did the measurement really report what it was
 
 #### Correlational Research
 
-AKA cross-sectional research. Where we observe what naturally happens in the world. 
+AKA cross-sectional research. Where we observe what naturally happens in the world.
 
-Correlational research has problems establishing cause, often because of a **tertium quid** (third thing) that is related to and perhaps causes both what we considered the cause and the effect, or perhaps that causes the effect independently of the cause.  These extra factors are also sometimes called **confounding factors**
+Correlational research has problems establishing cause, often because of a **tertium quid** (third thing) that is related to and perhaps causes both what we considered the cause and the effect, or perhaps that causes the effect independently of the cause. These extra factors are also sometimes called **confounding variables** or simply confounds.
 
 #### Experimental Research
 
-Where we manipulate one variable to see its effect on another.  Often we're looking to eliminate confounding effects by making sure we don't see an effect absent the cause, so we test with the cause and without it.
+Where we manipulate one variable to see its effect on another. Often we're looking to eliminate confounding effects by making sure we don't see an effect absent the cause, so we test with the cause and without it.
+
+### Two methods of data collection:
+
+1.  Called "between-groups", or "between-subjects" or "independent design". We manipulate the independent variable by having two different groups of subjects.
+2.  Called "whithin-subjects" or "repeated measures design." E.g. take the same group and give them negative reinforcement for a period of weeks and test performance, and then in a subsequent period(s) give them positive or no reinforcement (or both), and compare the performance.
+
+### Two types of variation
+
+1.  If the same subject performs slightly differently on the same test under the same conditions at different times, this is **unsystematic variation**.
+2.  If we change the conditions between one run and the next, then (you guessed it), this is **systematic variation**.
+
+Same things happen in groups of different participants. Given the same test to two groups, one group will do better than the other do to individual differences. This is unsystematic.
+
+But there are always both things going on, in any test, so the role of statistics is to sort out how much is due to individual (or group) differences, and how much do to the manipulated independent variable.
+
+We try to minimize the influence of unsystematic variation by **randomization**. In repeated measure design, you can minimize the effects of boredom (negative) and practice effects (i.e. learning, positive), by changing the order of sessions for different participants (i.e experiment vs control first). This is called **counterbalancing** the order. In independent design, you need to ensure that you select your groups randomly, especially with respect to any confounding variables.
+
+### Frequency distributions
+
+When you have data, it's useful to do a histogram of the frequency of different values. One way these can be distributed is a normal distribution, the good ol' bell curve. Height is a good example.
+
+Two ways to vary from normal distribution are: 1. **Skew**, where values cluster to the left or right of center. Note (this is counter-intuitive) positively skewed means the **tail** points to the right, so the hump is on the left. Negative skew is where the tail points to the left, so hump is in the right. 2. **Kurtosis** has to do with how pointy the distribution is and how many clusters are in the tails. A tall pointy distribution with heavy tails is **leptokurtic**, or has **positive kurtosis**. A more boxy, confused disturbutions with highs throughout, flatter than normal, has negative kurtosis or is **platykurtic**.
+
+### The center of a distribution
+
+We can use three diffferent measures for center.
+
+The mode occurs most frequently, i.e. the tallest bar of our histogram.
+
+(Interlude: Where's my histogram? Come on, Andy, where's my code? I guess we don't get to do R just yet. Talking makes programmers sad. Be patient, grasshopper.)
+
+Mean, mode, and median. Mean is the arithmetic average found in the usual way:
+
+$$\frac{\sum\limits_{1 \to n}}{n}$$ The median is (more or less) a score such that 50% of values are below, and 50% above. Formally, we arrange in ascending order, count the number of scores, add one to the count, and divide by two. This gives the index of the median score. For an odd number, works out great. For an even number, let's say 10 scores
+
+$$\frac{10 +1}{2} = 5.5$$
+
+which is midway between scores 5 and 6 so we average those to scores and that's the median.
+
+The mode is the value that occurs most often
+
+Let's use the example he gives and try our hand at some R code. (You can't keep a good man down — and programmers neither.) Google tells us that Tidyverse simply uses R arrays in the one dimensional case, so here are the values he gives, the mean and the mode.
+
+```{R}
+# Since I pirated these values from the text, we'll give them a pirate name
+arr <- c(108, 103, 252, 121, 93, 57, 40, 53, 22, 116, 98)
+
+cat("Array length:\n")
+print(length(arr))
+
+cat("\nMedian value\n")
+median(arr)
+
+cat("\nMean value\n")
+round(mean(arr), 2)
+```
+
+The results I got were consistent with the book. Since there's no repeating value, mode is undefined, and it turns out R's built-in mode function simply returns the data type of the array, "numeric" in this case. However, a Google search suggested this code doing a descending order sort on a table and selecting the first value:
+
+```{R}
+my_array <- c(1, 2, 2, 3, 4, 2, 5)
+# Returns the name of the highest-frequency element
+names(sort(-table(my_array)))[1] 
+```
+
+That returns two, as expected.  Google cautions against using this code however for general cases, and we can easily see that it fails to handle the case where the length >= 2 and the first two values are the same, where mode is undefined.  We would also need to consider the trivial one-element case.
+
+
+
