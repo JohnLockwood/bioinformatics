@@ -1,0 +1,46 @@
+---
+title: "Chapter 1 Notes"
+author: "John Lockwood"
+format: html
+editor: visual
+---
+
+These are notes are based on *Discovering Statistics Using R*, part of my [Statistics 1](../DiscoveringStatisticsUsingR/Statistics_01.qmd) course.
+
+## Well, here we are
+
+This chapter gets into "Why Statistics", with some entertaining arm-waving about how answering questions in the sciences often involves processing "quantitative methods." There's also a flow chart about the research process, which the rest of the chapter goes through. It starts to get interesting as he develops theories about why game show contestants have narcissistic personality disorder, and shows a data table. A good theory should generate testable — ideally falsifiable — hypotheses.
+
+Moves on to discussing data collection. When we do this we need to figure out:
+
+1\) What to measure.
+
+2\) How to measure it.
+
+### What to Measure
+
+Independent vs dependent variables. If we think one thing causes another, the cause an independent variable. The thing it causes is the dependent variable. Especially use these terms when we use experimental methods, because we can manipulate the variables. More generally, a predictor variable corresponds to independent variable and outcome variable refers to a dependent variable, so we can also use in corelational or cross-sectional research where we don't manipulate variables. These terms don't imply causation as strongly.
+
+Categorical variables (enums, more or less), vs continuous variables (real (or at least natural) numbers). Some categories are binary variables (male/female, alive/dead). Of course, categories can also be represented by numbers.
+
+Ordered categories are ordered (e.g. contest winners could be labeled first, second, third, etc) nominal categories are just names and don't tell us about ordering (Bob, Jane, Phred with a ph).
+
+Continuous variables include interval variables. "To say that data are interval, we must be certain that equal intervals on the scale represent equal differences in the property being measured." E.g. rating scales, 3 vs 4 same as 4 vs 5 (but some self-report scales are more subjective and therefore ordinal? ). Discussion is confusing. Ratio variables are interval variables with the added condition that ratios are meaningful. A professor rated 4 is twice as helpful as one rated 2. Reaction time as a better example, the ratio of 500 ms to 400 ms is the same as 1000:800 ms.
+
+Continuous variables can be measured discretely. E.g. age is measured in years, not in hours or picoseconds.
+
+Measurement errors. Could be from improperly calibrated equipment, differences in measurement equipment, and notoriously true of self-reported data, where people may be interested in protecting their reputation, saying what they expect the researchers want, etc. etc.
+
+Validity vs reliability. Validity: Did the measurement really report what it was designed to measure? Reliablitity: Is it consistent in its measurements.
+
+### Data Collection: How to Measure
+
+#### Correlational Research
+
+AKA cross-sectional research. Where we observe what naturally happens in the world. 
+
+Correlational research has problems establishing cause, often because of a **tertium quid** (third thing) that is related to and perhaps causes both what we considered the cause and the effect, or perhaps that causes the effect independently of the cause.  These extra factors are also sometimes called **confounding factors**
+
+#### Experimental Research
+
+Where we manipulate one variable to see its effect on another.  Often we're looking to eliminate confounding effects by making sure we don't see an effect absent the cause, so we test with the cause and without it.

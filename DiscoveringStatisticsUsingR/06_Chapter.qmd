@@ -1,0 +1,7 @@
+---
+title: Chapter 6 Notes
+author: John Lockwood
+format: html
+editor: visual
+---
+These are notes are based on *Discovering Statistics Using R*, part of my [Statistics 1](../DiscoveringStatisticsUsingR/Statistics_01.qmd) course.

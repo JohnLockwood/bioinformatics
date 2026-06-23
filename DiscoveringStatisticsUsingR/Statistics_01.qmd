@@ -1,15 +1,11 @@
 ---
-title: "DiscoveringStatisticsUsingR_Course_1"
+title: "DiscoveringStatisticsUsing R Course 1"
 author: "John Lockwood"
 format: html
 editor: visual
 ---
 
-# Discovering Statistics Using R.
-
-## Course 1
-
-### Course Requirements:
+## Course Requirements:
 
 Our course completion requirements (from our Obsidian notes) for this course are listed as
 
@@ -17,7 +13,7 @@ Our course completion requirements (from our Obsidian notes) for this course are
 
 This rather begs the question of what would be "useful", but see the
 
-### Optional But Groovy Learning Goals:
+## Optional But Groovy Learning Goals:
 
 - Learn statistics (duh). Engage the book thoroughly and do many exercises to see how R does it.
 
@@ -25,10 +21,21 @@ This rather begs the question of what would be "useful", but see the
 
 - Supplement this book with more modern R. This wouldn't be necessary if we weren't cheaply refusing to shell out another seventy bucks for the revised edition. Let that be a lesson to you: work through your books when you buy them. :). Use Gemini or other tools as needed to find the deltas. Or better yet, explore and incorporate the resources in the [new edition website](https://www.discovr.rocks/) vs. the [original](https://studysites.sagepub.com/dsur/study/default.htm). Of course we'll make free use of the student resources as we go along in our Quarto notes. (Note: Looks like we had a pretty good idea and are already using Quarto, Python, and Reticulate, so all good. \[Tidyverse\](<https://tidyverse.org/>) turns out to be another part of this answer, so we'll dig into that up front).
 
-- Learn and document how to use Python to accomplish the same thing. Some preliminary research is necessary since all this is in the context of bioinformatics, for which Pandas seems extremely poorly suited based on how it scales (or doesn't). We could go that way for toy examples, of course, but \[Polars\](<https://pola.rs/>) is the new hotness.
+- Learn and document how to use Python to accomplish the same thing. Some preliminary research is necessary since all this is in the context of bioinformatics, for which Pandas seems extremely poorly suited based on how it scales (or doesn't). We could go that way for toy examples, of course, but \[Polars\](<https://pola.rs/>) is the new hotness. Or how does one deal with Biofactor and what that brings to the table?
 
 - As much as possible, see how to make this work in a mixed Quarto environment. I'm told one can share Datasets, for example, but we'll see if reticulate ends up agreeing that it knows how to do that. I asked about the [limitations here](https://share.gemini.google/c6RWbHVNLQrW) so we'll see if we can't fire that up in Polars at least in a limited way now or perhaps help the team by testing out what they're working on for native "Polars" in R.
 
-### Citations:
+## Citations:
 
-If it's not obvious by now, we're using Discovering Statistics Using R, by Andy Field, Jeremy Miles, and Zoë Field, so all references to Chapter Whatsit etc. refer to that. Data files generally are as provided on the student website – some other files are my own. With the caveat that I'm using what I get from that book as I go, I'm generally the author of everything here, and if not, I'll cite as I go along and try to remember to keep all the links publicly available. Feel free to get mad if I miss any, but don't ruin your day over it.
+If it's not obvious by now, we're using Discovering Statistics Using R, by Andy Field, Jeremy Miles, and Zoë Field, so all references to "Chapter Whatsit" etc. refer to that. Data files generally are as provided on the student website – some other files are my own. With the caveat that I'm using what I get from that book as I go, I'm generally the author of everything here, and if not, I'll cite as I go along and try to remember to keep all the links publicly available. Feel free to get mad if I miss any, but don't ruin your day over it.
+
+### Chapter Notes
+
+- [Chapter 1](/01_Chapter.qmd)
+- [Chapter 2](02_Chapter.qmd)
+- [Chapter 3](03_Chapter.qmd)
+- [Chapter 4](04_Chapter.qmd)
+- [Chapter 5](05_Chapter.qmd)
+- [Chapter 6](06_Chapter.qmd)
+- [Chapter 9](09_Chapter.qmd)
+- [Chapter 15](15_Chapter.qmd)

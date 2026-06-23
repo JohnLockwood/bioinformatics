@@ -1,2 +1,3 @@
 project:
+  type: website  # or 'book', depending on your setup
   output-dir: _output
