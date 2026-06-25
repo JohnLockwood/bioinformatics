@@ -7,11 +7,13 @@ editor: visual
 
 ## Course Requirements:
 
-Our course completion requirements (from our Obsidian notes) for this course are listed as
+These are my course notes and other goodies based on Discovering Statistics Using R, by Andy Field, Jeremy Miles, and Zoë Field. Chapter notes are in the folder ChapterNotes, while Other contains some R and other explorations I may make along the way. (Some R explorations will appear in the notes, too, since the book doesn't code until Chapter 3, but I don't want to crowd the notes *too* much with experiments.)
+
+Our course completion requirements (from our unpublished Obsidian notes) for this course are listed as
 
 > Read and compile a useful set of notes and R examples (as Quarto .qmd files) on Discovering Statistics Using R, Chapters 1-6, 9, and 15.
 
-This rather begs the question of what would be "useful", but see the
+This rather begs the question of what would be "useful", but see the section below.
 
 ## Optional But Groovy Learning Goals:
 
@@ -27,15 +29,15 @@ This rather begs the question of what would be "useful", but see the
 
 ## Citations:
 
-If it's not obvious by now, we're using Discovering Statistics Using R, by Andy Field, Jeremy Miles, and Zoë Field, so all references to "Chapter Whatsit" etc. refer to that. Data files generally are as provided on the student website – some other files are my own. With the caveat that I'm using what I get from that book as I go, I'm generally the author of everything here, and if not, I'll cite as I go along and try to remember to keep all the links publicly available. Feel free to get mad if I miss any, but don't ruin your day over it.
+Again, we're using Discovering Statistics Using R, by Andy Field, Jeremy Miles, and Zoë Field, so all references to "Chapter Whatsit" etc. refer to that. Data files generally are as provided on the student website – some other files are my own. With the caveat that I'm using what I get from that book as I go, I'm generally the author of everything here, and if not, I'll cite as I go along and try to remember to keep all the links publicly available. Feel free to get mad if I miss any, but don't ruin your day over it.
 
 ### Chapter Notes
 
-- [Chapter 1](/01_Chapter.qmd)
-- [Chapter 2](02_Chapter.qmd)
-- [Chapter 3](03_Chapter.qmd)
-- [Chapter 4](04_Chapter.qmd)
-- [Chapter 5](05_Chapter.qmd)
-- [Chapter 6](06_Chapter.qmd)
-- [Chapter 9](09_Chapter.qmd)
-- [Chapter 15](15_Chapter.qmd)
+- [Chapter 1](./ChapterNotes/01_Chapter.qmd)
+- [Chapter 2](./ChapterNotes/02_Chapter.qmd)
+- [Chapter 3](./ChapterNotes/03_Chapter.qmd)
+- [Chapter 4](./ChapterNotes/04_Chapter.qmd)
+- [Chapter 5](./ChapterNotes/05_Chapter.qmd)
+- [Chapter 6](./ChapterNotes/06_Chapter.qmd)
+- [Chapter 9](./ChapterNotes/09_Chapter.qmd)
+- [Chapter 15](./ChapterNotes/15_Chapter.qmd)
