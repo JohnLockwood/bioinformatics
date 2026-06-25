@@ -1,0 +1,56 @@
+---
+title: "100_Preliminaries"
+format: html
+
+---
+	
+# This is some markdown
+
+Of course. Let's try a simple R code block:
+
+```{r}
+print("Hello!")
+```
+
+And now some python, using our installed Conda environment, which RStudio graciously agreed to read from environment.yml? We can hope...
+
+```{python}
+import numpy as np
+print("Hello!")
+print("Numpy version:", np.__version__)
+```
+
+Let's see if Python objects persist from block to block.
+
+```{python}
+print("Numpy version:", np.__version__)
+```
+OK, that seemed to work OK.  Let's try some Gemini-provided code to see if we can use some Python created data in R.
+
+```{python}
+import pandas as pd
+import numpy as np
+
+# Create a sample dataframe
+df = pd.DataFrame({
+    'x': np.arange(1, 11),
+    'y': np.random.normal(10, 2, 10) 
+})
+print(df.head())
+```
+
+```{R}
+library(ggplot2)
+library(reticulate)
+
+# Access the Python object 'df'
+my_data <- py$df
+
+# Plot it using ggplot2
+ggplot(my_data, aes(x = x, y = y)) +
+  geom_point(color = "blue", size = 3) +
+  geom_line() +
+  theme_minimal()
+```
+
+Yes, that worked!  Notice that the library(whatever) lines are roughly the equivalent of import whatever in a python script or Jupyter notebook.  In the case of reticulate, that needed to be added to get the "py" object added to the namespace.

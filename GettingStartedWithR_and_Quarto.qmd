@@ -21,4 +21,3 @@ print("Hello!")
 print("Numpy version:", np.__version__)
 ```
 
-\

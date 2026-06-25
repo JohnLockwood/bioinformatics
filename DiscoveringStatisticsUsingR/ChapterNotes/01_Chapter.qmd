@@ -109,7 +109,93 @@ my_array <- c(1, 2, 2, 3, 4, 2, 5)
 names(sort(-table(my_array)))[1] 
 ```
 
-That returns two, as expected.  Google cautions against using this code however for general cases, and we can easily see that it fails to handle the case where the length >= 2 and the first two values are the same, where mode is undefined.  We would also need to consider the trivial one-element case.
+That returns two, as expected. Google cautions against using this code however for general cases, and we can easily see that it fails to handle the case where the length \>= 2 and the first two values are the same, where mode is undefined. We would also need to consider the trivial one-element case.
 
+June 25, 2026\
+We begin today by just doing the self-test, which in R amounts to removing the 252 value and re-running the mean. By way of R pedagogy, let's see if we can do that with respect to arr:
 
+```{r}
+# Original arr
+arr <- c(108, 103, 252, 121, 93, 57, 40, 53, 22, 116, 98)
+arr
 
+# Use a negative index to remove value at position 3
+short_arr <- arr[-3]
+short_arr
+
+print(round(mean(short_arr), 2))
+```
+
+OK, my little excuRsion agreed with the text, cool. The point of this was to show that compared to the median, the mean is sensitive to outliers.
+
+He next shows how to get the **range**, which is just the difference between the min and max value. This is easy enough to find in R through the usual procedure of "guess how to do it and run it to see if it works." (Statements like that is why other senior engineers used to object to me sharing their title back in the days when that's what I was doing).
+
+```{R}
+arr <- c(108, 103, 252, 121, 93, 57, 40, 53, 22, 116, 98)
+short_arr <- arr[-3]
+
+print("Showing the range for the original array")
+range_long = range(arr)
+print(range_long)
+print(diff(range_long))
+
+# For the self test the range is much smaller
+print("For the self test the range is much smaller")
+range_short = range(short_arr)
+print(range_short)
+print(diff(range_short))
+
+```
+
+Gemini [pointed out](https://share.gemini.google/YkD6RjeRtWjB) that that code can be improved for large data sets, where it tends to be inefficient, and provided another way to do it.
+
+### Quartile Data
+
+Quartiles are three values that split the range into four equal parts. First, we calcluate the median, which splits the data into two eauql parts. The lower quartile is the median of the lower half, and the upper quartile is the median of the lower half.
+
+Can we accomplish this in R easily? I would imagine so. We can use the quantile function.
+
+```{R}
+arr <- c(108, 103, 252, 121, 93, 57, 40, 53, 22, 116, 98)
+print(length(arr))
+sorted_arr = sort(arr) # Show the sorted array
+print(sorted_arr)
+print(quantile(arr)) # Use the original, quantile will sort for us
+
+# Next we'll show the inter-quartile range, which Fields discusses next.
+IQR(arr)
+IQR(arr, type=1) # How to match the book's answer.
+```
+
+Note that the values obtained sing quantile are intermediate between actual values, the true medians. Perhaps before I finish up the chapter I'll write a function to subset the array appropriately (R has "cut" function, but I'm not sure that's fit for this purpose).
+
+Along similar lines, I've printed out the IQR twice here. Using type=1 gets an answer that will agree with the textbook, which uses actual values from the array. Using the default uses the quantile function under the hood, which gives interpolated values, (i.e. 57 = 112-55). For background see \[this Gemini response\](<https://share.gemini.google/2xcibEUZqR28>) and the [IQR documentation](https://www.rdocumentation.org/packages/stats/versions/3.6.2/topics/IQR)
+
+Next, let's do the self-test using R. Again, in the textbook, we haven't gotten to R yet, I'm skipping ahead. The book is aimed at undergrads who haven't learned to program yet, not old guys who used to do it for a living.
+
+The self test asks us to compute several values for an array of values, representing the time in seconds that a group of heavy smokers put on a treadmill fell off from exhaustion. Let's set that up and solve it using R defaults.
+
+```{R}
+data <- c(18, 16, 18, 24, 23, 22, 22, 23, 26, 29, 32, 34, 34, 36, 36, 43, 42, 49, 46, 46, 57)
+# print(data)
+
+# We're asked to compute the mode, median, mean, upper and lower quartiles, range, and interquartile range.
+
+# Let's first print the sorted data to give us an idea of what's going on.
+s_data <- sort(data)
+cat("Data:", s_data)
+
+# No value occurs "the most times", though if I had to guess I'd say something between 34 aand 36, which both appear twice, as do 22 and 46
+cat("\nNo mode")
+
+# The rest of the tasks are straightforward if we focus on using R rather than matching whatever value Andy publishes (see discussion above.)
+cat(sprintf("\nMean: %.2f", mean(data)))
+cat(sprintf("\nMedian: %.2f", median(data)))
+cat("\nQuartiles:\n")
+print(quantile(data))
+cat(sprintf("Inter-quartile range: %.2f\n", IQR(data)))
+```
+
+In the next section he discusses how probable it is that something could happen, using suicide data to show that most suicides occur between the ages of 30-35 (which isn't borne out here in US by real data, I think). There's more to do in this section, but we'll leave it there for today.
+
+\
