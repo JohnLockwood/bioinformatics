@@ -131,6 +131,7 @@ OK, my little excuRsion agreed with the text, cool. The point of this was to sho
 He next shows how to get the **range**, which is just the difference between the min and max value. This is easy enough to find in R through the usual procedure of "guess how to do it and run it to see if it works." (Statements like that is why other senior engineers used to object to me sharing their title back in the days when that's what I was doing).
 
 ```{R}
+library(reticulate)
 arr <- c(108, 103, 252, 121, 93, 57, 40, 53, 22, 116, 98)
 short_arr <- arr[-3]
 
@@ -177,6 +178,8 @@ The self test asks us to compute several values for an array of values, represen
 
 ```{R}
 data <- c(18, 16, 18, 24, 23, 22, 22, 23, 26, 29, 32, 34, 34, 36, 36, 43, 42, 49, 46, 46, 57)
+
+
 # print(data)
 
 # We're asked to compute the mode, median, mean, upper and lower quartiles, range, and interquartile range.
@@ -198,4 +201,52 @@ cat(sprintf("Inter-quartile range: %.2f\n", IQR(data)))
 
 In the next section he discusses how probable it is that something could happen, using suicide data to show that most suicides occur between the ages of 30-35 (which isn't borne out here in US by real data, I think). There's more to do in this section, but we'll leave it there for today.
 
+### An aside about Reticulate
+
+June 30, 2026
+
+OK, I have some more of the book to get through for chapter 1, but since I only have a short time today, I thought this might be a good time to try my hand at getting some R data into Python.\
 \
+Reticulate has an np_array function, so in the tradition of all famous last words, let's see if it's just that easy:
+
+```{r}
+library(reticulate)
+
+
+# Ensure we still have this.
+print(data)
+
+
+# Ensure we can access the R array
+np_data = np_array(data, order="F")
+
+# Let's see if we can access a basic numeric value (integer)
+my_int <- 42L
+
+
+```
+
+OK, that seemed to work, it didn't cough or sputter. But the acid test is whether we can use it in Python. Let's just try printing it for now to see if it's reasonable. In quarto, the reticulate package creates an object, "r", through which we can access objects in r's memory
+
+```{python}
+import numpy as np
+print("Can we access the R array now?")
+print(r.np_data)
+
+print("\nAccess the integer we declared in R too.")
+print(r.my_int)
+
+print("We'll now try to go the other way to see if that works")
+
+greeting = "Hello from Python!"
+```
+
+Can we get our Python data back out into R?
+
+Yes, that works too. Cool beans.
+
+```{r}
+print(py$greeting)
+```
+
+Clearly our examples at this point are all fairly trivial proofs of concept. For more on reticulate, check out the [package documentation](https://cran.r-project.org/web/packages/reticulate/refman/reticulate.html) or this [RStudio](https://rstudio.github.io/reticulate/index.html) version of the same.
