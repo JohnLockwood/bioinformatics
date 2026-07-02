@@ -250,3 +250,37 @@ print(py$greeting)
 ```
 
 Clearly our examples at this point are all fairly trivial proofs of concept. For more on reticulate, check out the [package documentation](https://cran.r-project.org/web/packages/reticulate/refman/reticulate.html) or this [RStudio](https://rstudio.github.io/reticulate/index.html) version of the same.
+
+## Doing It In Python
+
+Now that we have our R array moved over to Python, let's see briefly demonstrate how to do what we've done so far using numpy's API.
+
+```{python}
+
+import numpy
+import scipy.stats as stats # for mode
+
+data = r.np_data
+
+print("The data from R:")
+print(data)
+
+print("\nThis array has", len(data), "elements.")
+
+print("\nThe mean is %.2f." % data.mean())
+print("\nThe median is %.2f." % np.median(data))
+
+
+# Get the mode
+mode_array, mode_count = stats.mode(data)
+print("\nThe mode array contains %d elements", mode_count)
+print("The mode array value is", mode_array)
+
+
+print("\Here is the quantile (quartile) data:")
+quantile_data = np.quantile(data, [0, .25, .5, .75, 1])
+print(quantile_data.astype(int))
+
+```
+
+Until now, the functionality of R and Python have pretty much been equivalent. Using scipy, we have an implementation of mode that R seems to lack, but it returns only one of the matching "most frequent" values ([as documented](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.mode.html)). Given the complexity of capturing the "mode" idea for the various cases, I'm not sure having an opinionated implementation is better than not having one, but we leave that for the language warriors to sort out.
