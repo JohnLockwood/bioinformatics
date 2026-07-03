@@ -332,5 +332,20 @@ Once I'd correctly refined the request, Gemini correctly gave us a set of fake d
 scaled_70 = round(scaled_70, 2)
 scaled_70
 probability = pnorm(scaled_70, lower.tail = FALSE)
-cat(sprintf("Suicide probability age 70+: %.2f%%.", probability * 100))
+probability
+cat(sprintf("Suicide probability age 70+: %0.2f%%.", probability * 100))
 ```
+
+In retrospect, we could have used pnorm to approximate this answer in a virtual one-liner, by providing our mean and our standard deviation to scale automatically:
+
+```{r}
+suicide_data = c(10, 22, 24, 26, 27, 27, 28, 29, 30, 33, 39, 41, 42, 43, 44, 44, 45, 47, 49, 70)
+
+probability = pnorm(suicide_data, mean=36, sd=13, lower.tail = FALSE)[20]
+print(probability)
+cat(sprintf("Suicide probability age 70+: %0.2f%%.", probability * 100))
+```
+
+It's interesting that the value we get is not the same in both cases (though very close).
+
+Given the fun we're having climbing the rest of the steep part of the learning curve, we won't stop to explore that mystery further.
