@@ -284,3 +284,53 @@ print(quantile_data.astype(int))
 ```
 
 Until now, the functionality of R and Python have pretty much been equivalent. Using scipy, we have an implementation of mode that R seems to lack, but it returns only one of the matching "most frequent" values ([as documented](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.mode.html)). Given the complexity of capturing the "mode" idea for the various cases, I'm not sure having an opinionated implementation is better than not having one, but we leave that for the language warriors to sort out.
+
+## Using Frequency Distributions to Estimate Probability ("Go Beyond the Data").
+
+The idea here is that in a normal distribution (where values are centered symetrically around a mean), we can convert an actual score into a standard score or z-score. See also and for the formula below, \[Standard Score\](<https://en.wikipedia.org/wiki/Standard_score>).
+
+A standard score is relative to an idealized case with a mean of zero and a standard deviation of 1. To obtain a z-score, we proceed as follows: We take the actual data point we're interested in, and subtract the mean of all the scores, then we divide that result by the standard deviation.
+
+Or,
+
+$$z = \frac{x - \mu}{\sigma}$$
+
+Where $x$ is our data point, $\mu$ is our population mean, and $\sigma$ is our population stand deviation.
+
+I.e.
+
+The example given in the book is for suicide data by age, and we assume the data has a mean of 36 and a stand deviation of 13. We want to know what the probability of someone 70 or older committing suicide of a given cliff, so we first calculate the z score as follows:
+
+```{r}
+z = (70 - 36)/13
+round(z, 2)
+```
+
+Actually the book didn't show the R code for that, but it was easy enough to figure out.
+
+We can use this as we did in the book's example to look up the probability in Appendix A.1, the table of the standard normal distribution. Thumbing ahead most un-programmatically to to page 934 and looking in the smaller values column, we find the probability to be .00440, or .44%.
+
+Hooray? Can we use a table of logarithms next to multiply numbers? Hello, this is John calling from the 21st century, and we have computers now.
+
+Well, Google relates that we can get a standard z score in R using the scale function, so let's try that, since we looked it up. Unfortunately that isn't exactly the function we used above, it wants to operate on an array or vector or matrix or the like. Let's see if Google can make up a nice vector of about 20 values with a mean of 36 and a standard deviation of 13. (See \[this query\](<https://share.gemini.google/cn0MLW8z28Ny>))
+
+```{r}
+
+# Some test data with a value we want to check
+suicide_data = c(10, 22, 24, 26, 27, 27, 28, 29, 30, 33, 39, 41, 42, 43, 44, 44, 45, 47, 49, 70)
+suicide_data
+
+# Scale vector and get the last element (formerly 70) into a variable
+scaled = scale(suicide_data, 36, TRUE)
+scaled_70 = scaled[20]
+print(round(scaled_70, 2))
+```
+
+Once I'd correctly refined the request, Gemini correctly gave us a set of fake data , also according to a Google query, the pnorm function will allow us to convert this 2.62 back into a probability.
+
+```{r}
+scaled_70 = round(scaled_70, 2)
+scaled_70
+probability = pnorm(scaled_70, lower.tail = FALSE)
+cat(sprintf("Suicide probability age 70+: %.2f%%.", probability * 100))
+```
