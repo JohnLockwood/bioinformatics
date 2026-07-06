@@ -8,3 +8,4 @@ renv/staging/
 /_output/
 /.quarto/
 **/*.quarto_ipynb
+**/BioinformaticsandFunctionalGenomics*.pdf

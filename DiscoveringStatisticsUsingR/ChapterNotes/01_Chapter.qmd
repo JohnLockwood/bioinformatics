@@ -346,6 +346,6 @@ print(probability)
 cat(sprintf("Suicide probability age 70+: %0.2f%%.", probability * 100))
 ```
 
-It's interesting that the value we get is not the same in both cases (though very close).
+It's interesting that the value we get is not the same as we get if we scale first, though it's fairly close.
 
 Given the fun we're having climbing the rest of the steep part of the learning curve, we won't stop to explore that mystery further.
