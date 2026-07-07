@@ -29,9 +29,17 @@ From [another query](https://share.gemini.google/bMtD1zPb070I), the following re
 
 And [yet another query](https://chatgpt.com/share/6a49049f-b4a4-83ea-b5d1-43f2d587fbc2) turned up this absolute gem:
 * Jonathan Pevsner's *Bioinformatics and Functional Genomics*.  It's pricey but likely worth buying a print version.  Meantime a freebie downloaded from [here](http://library.unisel.edu.my/equip-unisel/custom/ebook_catalog/BioinformaticsandFunctionalGenomics(3rd%20Edition).pdf) is sitting in this directory (at least for me, it's git ignored).  Note before buying it however that it is extremely advanced and challenging, not a fun read like Essential Cell Biology.  Might be best to put this off and wait for the next edition, if any -- detailed but dated.
+
+
+## Still More Titles:
+
+* R Bioinformatics Cookbook
+* Statistical Methods in Bioinformatics
+* [Applied Statistics for Bioinformatics Using R](https://cran.r-project.org/doc/contrib/Krijnen-IntroBioInfStatistics.pdf) This is a free online book and looks quite good on statistics and R for bioinformatics.
+* [Biological Sequence Analysis: Probabilistic Models of Protiens and Nucleic Acids](https://www.amazon.com/Biological-Sequence-Analysis-Probabilistic-Proteins/dp/0521629713).   On hidden Markov  models and the like, covers HMMs for phylogenetic trees, sequence alignment, etc.  Dense but not language specific.
 ## Courses and Free Tutorials
 
-The tutorial for the online sandbox [sandbox.bio](https://sandbox.bio) is probably worth going through.  This is a fun tool that starts you off reading FASTA files.  There are also a whole bunch of [great tutorials](https://sandbox.bio/tutorials) on different tools.  [Question - how to set up all such tools locally, or what remote servers have these and data we need hosting genomic data]
+The tutorial for the online sandb. x [sandbox.bio](https://sandbox.bio) is probably worth going through.  This is a fun tool that starts you off reading FASTA files.  There are also a whole bunch of [great tutorials](https://sandbox.bio/tutorials) on different tools.  [Question - how to set up all such tools locally, or what remote servers have these and data we need hosting genomic data]
 
 The best of the moocs seems to be EdX/Harvard's "Data Analysis for the Life Sciences."  Pevzner has one on algorithms on Coursera.
 

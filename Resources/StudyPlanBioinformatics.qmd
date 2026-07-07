@@ -1,0 +1,10 @@
+# Study Plan for Bioinformatics
+
+This is a **PRELIMINARY** study plan.
+
+ The point of this plan is to pick some basic beginner resources and go from there, in a reasonable order:
+
+1. [Bioinformatics Data Skills](https://www.amazon.com/Bioinformatics-Data-Skills-Reproducible-Research/dp/1449367372) by Vince Buffalo.  This one could be first or second (See next entry). Currently $42.20 new.
+2. The [Biostar Handbook](https://biostar.myshopify.com/).  $35.00 with two year access, $25.00 for one month.  Go through this and the associated course, FastTrack Bioinformatics.
+3. 
+
