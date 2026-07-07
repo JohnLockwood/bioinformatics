@@ -4,4 +4,27 @@ author: "John Lockwood"
 format: html
 editor: visual
 ---
+
 These are notes are based on *Discovering Statistics Using R*, part of my [Statistics 1](../DiscoveringStatisticsUsingR/Statistics_01.qmd) course.
+
+## Chapter 2:  Everything you ever wanted to know about statistics (well, sort of)
+
+Really the chapter is about statistical models. We build these for the same reason engineers build models of bridges — to try to understand how it will perform in the real world. To make sure the model represents the world accurately, need a good model **fit** to the real world data.
+
+In psychology, analysis of variance (ANOVA) and regression are both **linear models.** I.e., try to fit a straight line. Curves are non-linear models. The book deals only with linear models (I'm starting to think it's pretty basic).
+
+### Populations and Samples
+
+We try to make predictions about broad populations (e.g. all humans), but by necessity, our samples are smaller. Bigger samples are better (up to a point, presumably).
+
+Can measure fit of a model as difference between line we draw to represent data and actual points, as:
+
+- **Total error.** This is the sum of all the deviances. But this bad because positive and negative will cancel. Son instead we use
+
+- **Sum of squares** - Better, now always dealing with positive numbers. But varies depending on \# of data points, so instead use:
+
+- **Mean Sum of Squares** (aka Mean Square): Take sum of squares / \# of data points -1 (Degrees of freedom, or $df$ ). Degrees of freedom is like putting eggs in carton. At first you can put egg anywhere in 18 slots. Then for next you can only choose 17, etc. Last egg you have no choice, only one slot left. So for an 18 egg crate, have 18 - 1 = 17 $df$. This is known as the ***variance***.
+
+- **Standard deviation.** Take the variance, which is based on mean squares, and take the square root to adjust for that, i.e.
+
+$$s = \sqrt{\frac{\sum~(x_1 - \bar{x})^2}{N - 1}}$$
