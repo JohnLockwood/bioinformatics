@@ -5,9 +5,11 @@ format: html
 editor: visual
 ---
 
-These are notes are based on *Discovering Statistics Using R*, part of my [Statistics 1](../DiscoveringStatisticsUsingR/Statistics_01.qmd) course.
+These are notes are based on *Discovering Statistics Using R*, part of my [Statistics 1](../DiscoveringStatisticsUsingR/Statistics_01.qmd) course.\
 
-## Chapter 2:  Everything you ever wanted to know about statistics (well, sort of)
+## Chapter 2: Everything you ever wanted to know about statistics (well, sort of)
+
+Begun 7/7/2026
 
 Really the chapter is about statistical models. We build these for the same reason engineers build models of bridges — to try to understand how it will perform in the real world. To make sure the model represents the world accurately, need a good model **fit** to the real world data.
 
@@ -28,3 +30,62 @@ Can measure fit of a model as difference between line we draw to represent data 
 - **Standard deviation.** Take the variance, which is based on mean squares, and take the square root to adjust for that, i.e.
 
 $$s = \sqrt{\frac{\sum~(x_1 - \bar{x})^2}{N - 1}}$$
+
+Standard deviation is not just about the fit of our data, a small SD means a narrower distribution, a large SD means a wider one.\
+\
+Thanks to [Gemini](https://share.gemini.google/h9Jk6tqmz3OD)for some sample code showing how this works. The trick is making sure xlim is set, otherwise autos-scaling means the graph always appears to be the same width.
+
+In effect, a small SD means all values cluster around the mean tightly (good fit), where a large SD means we have a "bad" fit, since the values are more spread out w/ respect to the mean.
+
+```{r}
+# 1. Generate two datasets with the same mean but different standard deviations
+data_narrow <- rnorm(1000, mean = 50, sd = 3)
+data_wide <- rnorm(1000, mean = 50, sd = 15)
+
+# 2. Plot them side-by-side (sets up a 1 row, 2 column layout)
+par(mfrow = c(1, 2))
+
+# 3. Plot both using the SAME xlim (e.g., 0 to 100)
+hist(
+  data_narrow, 
+  xlim = c(0, 100),            # Locks the axis
+  breaks = 20,
+  col = "steelblue", 
+  main = "Narrow (SD = 3)"
+)
+
+hist(
+  data_wide, 
+  xlim = c(0, 100),            # Locks the axis to match
+  breaks = 20,
+  col = "coral", 
+  main = "Wide (SD = 15)"
+)
+
+# Reset the plot layout back to normal when done
+par(mfrow = c(1, 1))
+```
+
+The mean is also a model, because all equations in stats boil down to:
+
+$$\text{outcome}_i = \text{(model)} +\text{error}_i$$
+
+For standard deviation, we have:
+
+$$deviation = \sum{(observed - model)}^2$$
+
+So far we've dealt with fit of our model to sample, but what we really want to know is fit of model to the whole population. For this we introduce the **standard error**.
+
+For example, using mean, we can say perhaps that we take 9 samples of lecturers popularity, and get a value of 2 for one sample, 3 for another, etc. as a mean. This is **sampling variation**, and we can plot this as a histogram too. This is a sampling distribution.
+
+p\. 43, "The standard deviation of sample means is known as the std error of the mean (SE)."
+
+But we can't really collect hundreds of samples, so we use the **central limit theorem** (and we're sneaking up on confidence intervals in this chapter too)...
+
+The idea that as sample gets large, i.e. \> 30, standard deviation of the sampling distribution converges to a std normal distribution is given by:
+
+$$\sigma_{\bar{X}} = \frac{s}{\sqrt{N}}$$
+
+When we talked about Z scores (mean of 0 and SD of 1), we said that 95% of z scores will fall between a value of -1.96 and 1.96. For a 99% confidence interval, we would use the values between which 99% of the scores fall, -2.58 and 2.58.\
+\
+He gives a way to solve for any given confidence interval, by looking it up in the for the std normal distribution. [This post](https://www.r-bloggers.com/2021/11/calculate-confidence-intervals-in-r/) shows how you would solve it in R. I'm still not sure I understand it well, though.
