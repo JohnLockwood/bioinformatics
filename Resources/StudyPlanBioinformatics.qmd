@@ -4,7 +4,18 @@ This is a **PRELIMINARY** study plan.
 
  The point of this plan is to pick some basic beginner resources and go from there, in a reasonable order:
 
-1. [Bioinformatics Data Skills](https://www.amazon.com/Bioinformatics-Data-Skills-Reproducible-Research/dp/1449367372) by Vince Buffalo.  This one could be first or second (See next entry). Currently $42.20 new.
-2. The [Biostar Handbook](https://biostar.myshopify.com/).  $35.00 with two year access, $25.00 for one month.  Go through this and the associated course, FastTrack Bioinformatics.
-3. 
+1. The [Biostar Handbook](https://biostar.myshopify.com/).  $35.00 with two year access, $25.00 for one month.  Go through this and the associated course, FastTrack Bioinformatics.  Just reading the titles has helped me already.  Should do this 1st.
+2. Introduction to Bioinformatics.  Arthur M. Lesk. Ordered an older edition from thriftbooks.
+3. [Bioinformatics Data Skills](https://www.amazon.com/Bioinformatics-Data-Skills-Reproducible-Research/dp/1449367372) by Vince Buffalo.  Currently $42.20 new.
 
+### My original Plan (Legacy)
+
+To quote a controversial politico when asked when he had a plan:
+
+> I have a concept of a plan.
+
+Possibilities include:
+
+* Work through Discovering Statistics Using R.  The edition I have is out of date, but cost $70 or more back then, and the new edition costs that now.  Out of date is better than ignorant.  You can get a lot of the source for the updated book [for free, here](https://www.discovr.rocks/)
+* Take Harvard/EdX's course [Data Analysis for Life Sciences](https://www.edx.org/certificates/professional-certificate/harvardx-data-analysis-for-life-sciences).  This was a [Gemini recommendation](https://gemini.google.com/app/2f5aa9c02d73575b)
+* ChatGPT's [recommendation](https://chatgpt.com/c/6a37c788-6d84-83ea-9fff-59a9463e51bd) was more tilted toward Python, which is where a lot of the work seems to be headed currently.  See especially the section "If I were starting today".  Especially relevant were the idea of using Pevzner's Bioinformatics Algorithms (copy saved in Thriftbooks, but it's heavy on algorithms, so holiding off and it may be sold out of my cart -- but it's also available on [Coursera](https://www.coursera.org/specializations/bioinformatics)) and using [Rosalind](https://rosalind.info).  Registered using BioJohnsin username.
