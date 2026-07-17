@@ -9,3 +9,5 @@ renv/staging/
 /.quarto/
 **/*.quarto_ipynb
 **/BioinformaticsandFunctionalGenomics*.pdf
+**/*.fa 
+**/*.gtf
