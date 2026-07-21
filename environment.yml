@@ -9,3 +9,4 @@ dependencies:
   - jupyter=1.1.1
   - python==3.14.6
   - scipy=1.18
+  - biopython=1.87=py314h6c2aa35_0

@@ -2,11 +2,19 @@
 
 This is a **PRELIMINARY** study plan.
 
- The point of this plan is to pick some basic beginner resources and go from there, in a reasonable order:
+I currently envision a two-pronged approach:
 
-1. The [Biostar Handbook](https://biostar.myshopify.com/).  $35.00 with two year access, $25.00 for one month.  Go through this and the associated course, FastTrack Bioinformatics.  Just reading the titles has helped me already.  Should do this 1st.
-2. Introduction to Bioinformatics.  Arthur M. Lesk. Ordered an older edition from thriftbooks.
-3. [Bioinformatics Data Skills](https://www.amazon.com/Bioinformatics-Data-Skills-Reproducible-Research/dp/1449367372) by Vince Buffalo.  Currently $42.20 new.
+1) ***Get an overview of the field***.  See Main Text and Supplemental Texts section below.  Especially when using the Biostart handbook, practice using the tools (hacking), most likely in QMD notebooks but also in Makefiles or Taskfiles or the like plus Python source as appropriate.
+2) ***Do Exploratory Research in Alcohol Use Disorder*** This is a topic of interest, and we can use it to practice in the context of a real project.
+### Main Text for an Overview:
+
+The [Biostar Handbook](https://biostar.myshopify.com/).  $35.00 with two year access, $25.00 for one month.  Go through this and the associated course, FastTrack Bioinformatics.  Just reading the titles has helped me already.  Should do this 1st.
+
+### Supplemental Texts:
+
+1. Introduction to Bioinformatics.  Arthur M. Lesk. Ordered an older edition from Thriftbooks.  See [Gemini's assessment](https://share.gemini.google/8TrW8WBwm6lZ).
+2. [Bioinformatics Data Skills](https://www.amazon.com/Bioinformatics-Data-Skills-Reproducible-Research/dp/1449367372) by Vince Buffalo.  Currently $42.20 new.  Not sure if we'll need to add this, but it has lots of folks recommending it.  Might be a lot of overlap with Biostar Handbook.
+
 
 ### My original Plan (Legacy)
 
