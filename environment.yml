@@ -10,3 +10,5 @@ dependencies:
   - python==3.14.6
   - scipy=1.18
   - biopython=1.87=py314h6c2aa35_0
+  - pip:
+      - jupyterlab-quarto==0.3.5
