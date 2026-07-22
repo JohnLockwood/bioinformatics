@@ -1,0 +1,139 @@
+---
+title: "Enhanced_FetchGabraA2_HG38"
+format: html
+editor: visual
+---
+
+# Getting Enhanced GABRA2 Information
+
+This is some code loosely based on this \[Gemini Query\](<https://share.gemini.google/YDIW2mLOKgYd>), wherein I explore the use of an annotated SequenceRecord in Biopython. This extends what I played around with a bit in FetchGabraA2_HG38.py.
+
+Next steps could include:
+
+- Grabbing the record for each protein
+
+- For each protein (enumerate the relevant articles from pubmed), printing title, author, and
+
+```{python}
+from Bio import Entrez, SeqIO
+
+Entrez.email = "johnlockwood2999@gmail.com"
+
+# Fetch GenBank format instead of FASTA
+handle = Entrez.efetch(db="nucleotide", 
+                       id="NC_000004.12", 
+                       rettype="gbwithparts", # Crucial change here
+                       retmode="text", 
+                       seq_start=46243548, 
+                       seq_stop=46390300)
+
+# Read the record using the "genbank" parser
+record = SeqIO.read(handle, "genbank")
+print(record)
+
+# import pdb; pdb.set_trace()
+```
+
+```{python}
+# Filter for Coding Sequences (CDS)
+cds_features = [f for f in record.features if f.type == "CDS"]
+
+if not cds_features:
+    print("No coding sequences found in this region.")
+else:
+    print("There are {0} coding sequences (splice variants) found".format(len(cds_features)))
+    # A region might have multiple splice variants. We will grab the first one.
+    main_cds = cds_features[0]
+    
+    # .extract() automatically stitches the exons together into the final mRNA format
+    coding_sequence = main_cds.extract(record.seq)
+    
+    # We can pull the protein name from the GenBank qualifiers dictionary
+    protein_name = main_cds.qualifiers.get('product', ['Unknown'])[0]
+    
+    print(f"Found product: {protein_name}")
+    print(f"Stitched CDS length: {len(coding_sequence)} base pairs")
+```
+
+```{python}
+# Filter for Coding Sequences
+cds_features = [f for f in record.features if f.type == "CDS"]
+
+print(f"Total splice variants found: {len(cds_features)}\n")
+
+protein_ids = []
+
+# Get basic info for each sequence variant
+for index, cds in enumerate(cds_features):
+    # print("CDS ------------------------------")
+    # print(cds)
+    # print("END CDS --------------------------")
+    
+    # Safely extract metadata from the qualifiers dictionary
+    product = cds.qualifiers.get('product', ['Unknown Product'])[0]
+    protein_id = cds.qualifiers.get('protein_id', ['No ID'])[0]
+    
+    # Save off for later processing.
+    protein_ids.append(protein_id)
+    
+    # Extract and stitch the specific exons for this variant
+    variant_seq = cds.extract(record.seq)
+    
+    # Translate to amino acids
+    protein_seq = variant_seq.translate()
+    
+    # Print the profile of the variant
+    print(f"--- Variant {index + 1} ---")
+    print(f"Product: {product}")
+    print(f"Protein ID: {protein_id}")
+    print(f"CDS Length: {len(variant_seq)} bp")
+    print(f"Protein Length: {len(protein_seq)} amino acids")
+    print(f"First 10 Amino Acids: {protein_seq[:10]}\n")
+    
+print("-------------------------")
+print("Protein IDs:", protein_ids)
+```
+
+Go after the first protein record for now.
+
+```{python}
+# Fetch the 1st protein record for now
+handle = Entrez.efetch(db="protein", 
+                       id=protein_ids[0], # Insert your protein_id here
+                       rettype="gb", 
+                       retmode="text")
+
+protein_record = SeqIO.read(handle, "genbank")
+
+# print(protein_record)
+
+# The features list now contains protein-specific metadata
+for feature in protein_record.features:
+    if feature.type == "Region":
+        domain_name = feature.qualifiers.get('region_name', [''])[0]
+        print(f"Functional Domain: {domain_name} at {feature.location}")
+```
+
+More to do here. Here we just grab the number of articles available. There are suspiciously 10 many times – likely many repeats. Can use
+
+```{python}
+
+unique_pubmed_ids = set()
+
+# Extract the linked PubMed IDs (PMIDs)
+for protein_id in protein_ids:
+  link_handle = Entrez.elink(dbfrom="protein", db="pubmed", id=protein_id)
+  link_record = Entrez.read(link_handle)
+  
+  pubmed_ids = []
+  for linkset in link_record[0]['LinkSetDb']:
+    if linkset['LinkName'] == 'protein_pubmed':
+        pubmed_ids = [link['Id'] for link in linkset['Link']]
+        unique_pubmed_ids.update(pubmed_ids)
+        
+  print("There are {0} pubmed articles for protein {1}".format(len(pubmed_ids), protein_id))
+
+print("There are {0} unique pubmed ids".format(len(unique_pubmed_ids)))
+  
+  
+```
