@@ -4,7 +4,9 @@
 #
 
 # John's notes:  This should correctly check if we have what we need 
-# for the book.  To run make sure you've done 
+# for the book.  To run make sure you've done mamba activate bio, or alternatively,
+# recreate the conda environment from the root using 
+# ```mamba/conda env create -f environment.yml```
 from __future__ import print_function, unicode_literals
 
 import os, time
