@@ -21,3 +21,8 @@ print("Hello!")
 print("Numpy version:", np.__version__)
 ```
 
+## Some Important Quarto Notes:
+
+CMD-SHIFT-ENTER runs a single cell.
+
+When creating an executable cell, beware of "Insert / Code Cell". That's just a markdown cell wrapping the code in the usual Markdown code cell. What you want is "Insert Executable Cell".

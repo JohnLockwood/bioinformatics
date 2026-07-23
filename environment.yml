@@ -1,14 +1,44 @@
 name: bio
 channels:
+  - bioconda
   - conda-forge
-  - defaults
 dependencies:
-  - jupyterlab=4.6.0
-  - pandas=3.0.3
-  - polars==1.41.2
-  - jupyter=1.1.1
+  - aria2
+  - bcftools
+  - bedtools
+  - bio
+  - bioawk
+  - biopython
+  - blast
+  - bowtie2
+  - bwa
+  - csvkit
+  - csvtk
+  - datamash
+  - fastp
+  - fastqc
+  - hisat2
+  - jq
+  - jupyter
+  - jupyterlab
+  - mafft
+  - make>4
+  - minimap2
+  - ncbi-datasets-cli
+  - pandas
+  - parallel
+  - perl-text-csv
+  - pip
+  - polars
   - python==3.14.6
-  - scipy=1.18
-  - biopython=1.87=py314h6c2aa35_0
+  - samtools>=1.14
+  - scipy
+  - seqkit
+  - seqtk
+  - snpeff==5.0
+  - subread
+  - trimmomatic
+  - ucsc-bedgraphtobigwig
+  - wget
   - pip:
-      - jupyterlab-quarto==0.3.5
+    - jupyterlab-quarto==0.3.5
