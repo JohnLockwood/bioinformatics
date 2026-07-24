@@ -3,7 +3,6 @@ title: "Enhanced_FetchGabraA2_HG38"
 format: html
 editor: visual
 ---
-
 # Getting Enhanced GABRA2 Information
 
 This is some code loosely based on this \[Gemini Query\](<https://share.gemini.google/YDIW2mLOKgYd>), wherein I explore the use of an annotated SequenceRecord in Biopython. This extends what I played around with a bit in FetchGabraA2_HG38.py.

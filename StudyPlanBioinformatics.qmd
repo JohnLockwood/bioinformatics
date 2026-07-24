@@ -4,8 +4,9 @@ This is a **PRELIMINARY** study plan.
 
 I currently envision a two-pronged approach:
 
-1) ***Get an overview of the field***.  See Main Text and Supplemental Texts section below.  Especially when using the Biostart handbook, practice using the tools (hacking), most likely in QMD notebooks but also in Makefiles or Taskfiles or the like plus Python source as appropriate.
+1) ***Get an overview of the field***.  See Main Text and Supplemental Texts section below.  Especially when using the Biostart handbook, practice using the tools (hacking), most likely in QMD notebooks but also in Makefiles or Taskfiles or the like plus Python source as appropriate. 
 2) ***Do Exploratory Research in Alcohol Use Disorder*** This is a topic of interest, and we can use it to practice in the context of a real project.
+3) Improve my R Skills, see Modern Statistics with R. 
 ### Main Text for an Overview:
 
 The [Biostar Handbook](https://biostar.myshopify.com/).  $35.00 with two year access, $25.00 for one month.  Go through this and the associated course, FastTrack Bioinformatics.  Just reading the titles has helped me already.  Should do this 1st.
