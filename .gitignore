@@ -12,3 +12,4 @@ renv/staging/
 **/*.fa 
 **/*.gtf
 **/biostar_handbook_books/
+data/

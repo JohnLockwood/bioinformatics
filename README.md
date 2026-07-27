@@ -29,6 +29,3 @@ This step is also needed to use quarto markdown:
   ```
   python3 -m jupyter labextension enable jupyterlab-quarto
   ```
-
-
-
