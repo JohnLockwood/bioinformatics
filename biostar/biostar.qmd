@@ -4,7 +4,6 @@ author: "John Lockwood"
 format: html
 editor: visual
 ---
-
 # Biostar Handbook Notes
 
 We're planning to do a fair amount of book-related data fetches consisting of many bash (zsh) command lines, so I'm going to try in this file to document:
