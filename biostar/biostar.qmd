@@ -4,6 +4,7 @@ author: "John Lockwood"
 format: html
 editor: visual
 ---
+
 # Biostar Handbook Notes
 
 We're planning to do a fair amount of book-related data fetches consisting of many bash (zsh) command lines, so I'm going to try in this file to document:
@@ -13,3 +14,38 @@ We're planning to do a fair amount of book-related data fetches consisting of ma
 - What's important about what's here
 
 - How I got it.
+
+## Refgenie was a bust so far
+
+I tried installing this in a root project directory, ./refgenie, since deleted. The problem was that it would seem to untar directories, but not unzip them. Presumably some gnu vs Berkley unix or python security issue lies at the hear of it. But we have a perfectly good data directory (`../data`), so we'll run with that for now.
+
+## Speaking of ../data
+
+# Download info
+
+The hg38 files were downloaded from here or a sub-folder of here:
+
+https://hgdownload.gi.ucsc.edu/goldenPath/hg38/bigZips/  
+
+For example, for the gtf:
+
+```
+# Note this is non-rentrant and assumes final gtf file not there
+wget https://hgdownload.gi.ucsc.edu/goldenPath/hg38/bigZips/genes/hg38.ncbiRefSeq.gtf.gz && gunzip hg38.ncbiRefSeq.gtf.gz
+```
+### Processing the gtf
+
+I obtained ../data/human_gene_counts.txt with this command:
+
+```
+cat hg38.ncbiRefSeq.gtf | cut -f 1 | sort | uniq -c | sort -rn | head -n 24 > human_gene_counts.txt
+```
+
+## NCBI Main Index
+
+```bash
+```bash
+# Get the assembly report
+```
+wget https://ftp.ncbi.nlm.nih.gov/genomes/ASSEMBLY_REPORTS/assembly_summary_refseq.txt
+```
