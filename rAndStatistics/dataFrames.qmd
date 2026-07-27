@@ -1,0 +1,273 @@
+---
+title: "dataFrames"
+format: html
+editor: visual
+---
+
+# data.frame and tibbles
+
+Here we do some general explorations of these two structures, and continue the notes on chapter 2 of the book (some of the completed exercises and examples below will be from numbered sections)
+
+data.frame is older and a part of base R, while tibble (tbl_def) is newer and comes from the dplyr pack
+
+```{r}
+
+```
+
+, which also implements old style and modern pipes.
+
+```{r}
+library(ggplot2)
+library(dplyr)
+library(palmerpenguins)
+```
+
+We can view all the datasets in all available packages with this function call, which opens a new window. Rather annoying in a notebook context, so I've commented it out.
+
+```{r}
+data()
+```
+
+We borrow some arrayData from variablesFun.r, and create a data.frame based on two vectors.
+
+```{r}
+
+# height in inches
+height = c(73, 65,62, 60, 74)
+
+# weight in lbs
+weight = c(219, 140, 115, 110, 220)
+
+person_stats <- data.frame(height, weight, row_names = c("John", "Jenniffer", "Lorraine", "Shorty", "Stretch"))
+
+person_stats
+
+class(person_stats)
+```
+
+We used the function "class" as the most reliable way to show the class hierarchy.
+
+Let's convert it to a tibble.
+
+```{r}
+person_stats_tbl <- tibble(person_stats)
+class(person_stats_tbl)
+```
+
+On a side note, I hate the \<- operator. Typing = is so much easier.
+
+Some of the sample data in the wild can be in either format, depending partly on where it comes from. For many purposes it doesn't matter, but for large data sets, tibble is a better choice
+
+```{r}
+#| echo false
+print(sprintf("The class of iris is %s.", toString(class(iris))))
+print(sprintf("The class of starwars is %s.", toString(class(starwars))))
+```
+
+```{r}
+library(dplyr)
+class(starwars)
+head(starwars)
+```
+
+```{r}
+library(palmerpenguins)
+penguins
+penguins |> select(island) |> distinct()
+```
+
+```{r}
+penguins |> select(island, species) |> distinct()
+```
+
+## Exercises from the book
+
+2.21:
+
+```{r}
+a <- "A rainy day in Edinburgh"
+class(a)
+
+
+# Data types
+# This should be double (aka numeric)
+class(1+2)
+
+# Converts to numeric 
+class(TRUE * 2)
+
+# As expected, promoted to numeric
+class(1L + 2)
+
+# Integer
+class(1L + 2L)
+
+
+
+```
+
+He works with the airquality dataframe quite a bit:
+
+```{r}
+
+# Get the column names
+names(airquality)
+
+# Show a column
+head(airquality$Temp)
+
+
+
+
+cat ("showing row 1")
+airquality[1,] # Row one
+
+# From exercises
+
+# Show first five rows:
+head(airquality, 5)
+# Another way:
+airquality[1:5,0]
+```
+
+### Use matrix-like indexing:
+
+```{r}
+airquality[5,4] # 5th col, 4th row
+```
+
+```{r}
+
+# C.f $Temp, 4th column, first 5 elements
+airquality[,4]
+cat("----------------------------------\n")
+
+# Or
+airquality[[4]]
+```
+
+All columns except second:
+
+```{r}
+airquality[,-2]
+```
+
+\
+"Compute the correlation between the `Temp` and `Wind` vectors of `airquality` without referring to them using `$`."\
+\
+(Note – shows how to make it MORE obscure)
+
+```{r}
+
+# Obscure and hard
+# names(airquality)
+wind = airquality[,3]; temp = airquality[,4]
+cor(wind, temp, use = "complete.obs",
+    method = c("pearson", "kendall", "spearman"))
+
+# Easy peasy
+cor(airquality$Wind, airquality$Temp)
+```
+
+2.24 \# 4: Get all columns except Temp and WInd
+
+```{r}
+
+# This could likely be made more concise.
+all_names <- names(airquality)
+some_names <- all_names[!(all_names %in% c("Temp", "Wind"))]
+airquality[some_names]
+
+```
+
+A less descriptive, but also more concise, way to do it:
+
+```{r}
+#names(airquality)
+airquality[, c(1,2,5,6)]
+```
+
+## Changing data using \$
+
+To be prudent, let's make a copy
+
+```{r}
+aq = airquality
+aq$Temp = 70 # It's always sunny
+aq
+```
+
+Or you could follow the book in 2.11.2 and use a throwaway data set. :)
+
+```{r}
+age <- c(28, 48, 47, 71, 22, 80, 48, 30, 31)
+purchase <- c(20, 59, 2, 12, 22, 160, 34, 34, 29)
+bookstore <- data.frame(age, purchase)
+
+bookstore$age[2] <- 100 # Keeping his mind busy at 100!
+bookstore
+```
+
+Add a column
+
+```{r}
+bookstore$visit_length <- c(5, 2, 20, 22, 12, 31, 9, 10, 11)
+bookstore
+```
+
+```{r}
+bookstore$rev_per_minute = bookstore$purchase / bookstore$visit_length
+bookstore
+summary(bookstore$visit_length)
+```
+
+```{r}
+# Exercise 2.25 # 2:  "Oh no, there’s been an error in the data entry! 
+# Replace the purchase amount for the 80-year-old customer with 16.
+# Note this code assumes one row with an 80 year old, or it will change all of them. :)
+bookstore[bookstore$age == 80,]$purchase = 16
+bookstore
+```
+
+### 2.11.3 Filtering using condition
+
+```{r}
+max(airquality$Temp) # Returns the max temperature
+index <- which.max(airquality$Temp) # Returns the index
+index
+
+# Use the index to get the row:
+
+airquality[index,]
+```
+
+```{r}
+airquality$Temp > 90 # vector of booleans for each row
+airquality[airquality$Temp > 90, ] # Shows rows
+```
+
+A different way to select rows:
+
+```{r}
+subset(airquality, Temp > 90)
+```
+
+Still another way to do do it. Remember, use filter for row conditions, and select for which columns you want. C.f. select (SQL) where (SQL – here use filter)
+
+```{r}
+library(dplyr)
+aq = tibble(airquality)
+aq  |> filter(Temp > 90)
+```
+
+More notes that repeat the book in this sectiono
+
+```{r}
+# To get indices rather than a vector of booleans, use "which"
+which(airquality$Temp > 90)
+
+# How many elements match?
+sum(airquality$Temp > 90)
+
+
+```

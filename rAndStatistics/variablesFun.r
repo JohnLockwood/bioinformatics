@@ -40,12 +40,12 @@ distances
 # You will use these vectors in Exercise 2.6.
 
 # height in inches
-height = c(73, 65, 69, 60, 74)
+height = c(73, 65,62, 60, 74)
 
 # In lbs
-weight = c(219, 140, 140, 110, 220)
+weight = c(219, 140, 115, 110, 220)
 
-person_stats = data.frame(height, weight, row_names = c("John", "Jenniffer", "Millie", "Shorty", "Stretch"))
+person_stats = data.frame(height, weight, row_names = c("John", "Jenniffer", "Lorraine", "Shorty", "Stretch"))
 
 person_stats
 
@@ -81,3 +81,13 @@ ggplot(penguins, aes(bill_length_mm, flipper_length_mm, colour = species)) +
       geom_point() +
       labs(x = "Bill length (mm)",
            y = "Flipper length (mm)")
+
+
+# This won't work
+# "hello " + 1
+
+# For strcat, use paste. Apparently toString is called on the number internally
+# (Actually it's the other way round:
+# https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/paste
+paste("hello", 1)
+
