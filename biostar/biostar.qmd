@@ -25,27 +25,30 @@ I tried installing this in a root project directory, ./refgenie, since deleted. 
 
 The hg38 files were downloaded from here or a sub-folder of here:
 
-https://hgdownload.gi.ucsc.edu/goldenPath/hg38/bigZips/  
+https://hgdownload.gi.ucsc.edu/goldenPath/hg38/bigZips/
 
 For example, for the gtf:
 
-```
+```         
 # Note this is non-rentrant and assumes final gtf file not there
 wget https://hgdownload.gi.ucsc.edu/goldenPath/hg38/bigZips/genes/hg38.ncbiRefSeq.gtf.gz && gunzip hg38.ncbiRefSeq.gtf.gz
 ```
+
 ### Processing the gtf
 
 I obtained ../data/human_gene_counts.txt with this command:
 
-```
+```         
 cat hg38.ncbiRefSeq.gtf | cut -f 1 | sort | uniq -c | sort -rn | head -n 24 > human_gene_counts.txt
 ```
 
 ## NCBI Main Index
 
-```bash
+``` bash
 ```bash
 # Get the assembly report
 ```
-wget https://ftp.ncbi.nlm.nih.gov/genomes/ASSEMBLY_REPORTS/assembly_summary_refseq.txt
-```
+
+wget https://ftp.ncbi.nlm.nih.gov/genomes/ASSEMBLY_REPORTS/assembly_summary_refseq.txt \`\`\`
+
+This is quite a large file, but you can find stuff related to many well-studied species like Drosophila etc.
