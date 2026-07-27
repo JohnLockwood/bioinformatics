@@ -1,18 +1,17 @@
 # R and Statistics
 
 Presently we're exploring and working from [Modern Statistics with R](https://www.modernstatisticswithr.com/).
-
 ## Notes:
 
-| When            | What                             |
-|-----------------|----------------------------------|
-| Fri, 24-07-2026 | [variablesFun.r](variablesFun.r) |
-|                 |                                  |
-|                 |                                  |
-|                 |                                  |
-|                 |                                  |
-|                 |                                  |
-|                 |                                  |
-|                 |                                  |
-|                 |                                  |
-|                 |                                  |
+| When            | What                                        |
+| --------------- | ------------------------------------------- |
+| Fri, 24-07-2026 | [variablesFun.r](variablesFun.r)            |
+| 7-25-2026 ff    | [[dataFrames.qmd\|Data Frames and Tibbles]] |
+|                 |                                             |
+|                 |                                             |
+|                 |                                             |
+|                 |                                             |
+|                 |                                             |
+|                 |                                             |
+|                 |                                             |
+|                 |                                             |
