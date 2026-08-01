@@ -1,0 +1,49 @@
+---
+title: "HumanGenomeGTF"
+author: "John Lockwood"
+format: html
+editor: visual
+---
+
+# Reading the human Genome GTF File
+
+This file is in Gene Transfer format. Per [wikipedia](https://en.wikipedia.org/wiki/Gene_transfer_format):
+
+> The **Gene transfer format** (**GTF**) is a [file format](https://en.wikipedia.org/wiki/File_format "File format") used to hold information about [gene](https://en.wikipedia.org/wiki/Gene "Gene") structure. It is a [tab-delimited](https://en.wikipedia.org/wiki/Tab_key "Tab key") text format based on the [general feature format](https://en.wikipedia.org/wiki/General_feature_format "General feature format") (GFF), but contains some additional conventions specific to gene information. A significant feature of the GTF that can be validated: given a sequence and a GTF file, one can check that the format is correct. This significantly reduces problems with the interchange of data between groups.:
+
+```{r}
+library(dplyr)
+library(readr)
+library(glue)
+
+# This must be set in environment before launching rStudio, etc.
+dataDir = Sys.getenv()[["BIO_DATA"]]
+
+# glue("The dataDir is {dataDir}")
+gtfFile = paste(dataDir, "hg38.ncbiRefSeq.gtf", sep="/")
+glue("Opening file:\n{gtfFile}")
+
+# Performance here is awful
+# gtfData = read_tsv(gtfFile)
+# gtfData
+```
+
+```{python}
+import polars as pl
+print(r.gtfFile)
+
+gtf_columns = [
+    "seqname", "source", "feature", "start", "end", 
+    "score", "strand", "phase", "attributes"
+]
+data = pl.read_csv(r.gtfFile, separator="\t", has_header=False, new_columns = gtf_columns, comment_prefix="#", null_values=".")
+# data.head()
+
+# rows = data.row(by_predicate=pl.col("attributes").str.contains('gene_id "GABRA2"'))
+
+```
+
+```{python}
+
+
+```

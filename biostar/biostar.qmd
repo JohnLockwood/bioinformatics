@@ -52,3 +52,19 @@ cat hg38.ncbiRefSeq.gtf | cut -f 1 | sort | uniq -c | sort -rn | head -n 24 > hu
 wget https://ftp.ncbi.nlm.nih.gov/genomes/ASSEMBLY_REPORTS/assembly_summary_refseq.txt \`\`\`
 
 This is quite a large file, but you can find stuff related to many well-studied species like Drosophila etc.
+
+July 30, 2026 working through https://www.biostarhandbook.com/automate-ncbi.html. Note could not log in to create an API key for entrez utilities, but these should all be installed now. Even w/o bio conda project active, `efetch --help` works, for example.
+
+Today I had to change "bio" alias to remove conflict with Bio tool. I was able to download a lot of what I did in hacking for GABRA2 using the bio tool and this command:
+
+```         
+bio fetch NC_000004.12 > chr4.gb
+```
+
+That gets info on all of chromosome 4. You can then extract gene information for GABRA2 using:
+
+```         
+bio fasta chr4.gb --gene GABRA2 > GABRA2.fa
+```
+
+This apparently only has CDS entries.

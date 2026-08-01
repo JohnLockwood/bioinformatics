@@ -229,7 +229,7 @@ bookstore[bookstore$age == 80,]$purchase = 16
 bookstore
 ```
 
-### 2.11.3 Filtering using condition
+### 2.11.3 Filtering using conditions
 
 ```{r}
 max(airquality$Temp) # Returns the max temperature
@@ -260,14 +260,72 @@ aq = tibble(airquality)
 aq  |> filter(Temp > 90)
 ```
 
-More notes that repeat the book in this sectiono
+More notes that repeat the book in this section
 
 ```{r}
+
 # To get indices rather than a vector of booleans, use "which"
+cat("Showing indices where airquality$Temp > 90:\n")
 which(airquality$Temp > 90)
 
+# airquality |> filter(Temp > 90)
 # How many elements match?
-sum(airquality$Temp > 90)
 
+# We can do this string interpolation because glue comes with tidyverse
 
+library(glue)
+glue("sum(airquality$Temp > 90): {sum(airquality$Temp > 90)}")
+
+# NOTE:  We use sum becuse the condition returns a long vector of booleans. To see this, uncomment out this line:
+# airquality$Temp > 90
+  
+# Any temperatures less than zero? Above 90?
+any(airquality$Temp < 0)
+any(airquality$Temp > 90)
+
+# This should be try given any condition for zero, above
+print(sprintf("all(airquality$Temp >= 0)?  %s", all(airquality$Temp >= 0)))
+
+# Booleans look bitwise in R
+cat('\nwhich(airquality$Temp > 70 & airquality$Temp < 80)\n')
+which(airquality$Temp > 70 & airquality$Temp < 80)
+```
+
+Exercise 2.26.1
+
+```{r}
+library(glue)
+
+glue("The coolest day was:")
+airquality[airquality$Temp == min(airquality$Temp), ]
+```
+
+Exercise 2.26.2
+
+```{r}
+library(glue)
+
+glue("# of days with wind speed > 17: {sum(airquality$Wind> 17)}")
+
+```
+
+Exercise 2.26.3
+
+```{r}
+library(glue)
+
+glue("Number of NA values Ozone: {sum(is.na(airquality$Ozone))}")
+```
+
+Exercise 2.26.2
+
+```{r}
+library(glue)
+
+glue("# of days with wind speed > 10 & temperature < 70: {sum(airquality$Wind> 10 & airquality$Temp < 70)}")
+
+```
+
+```{r}
+airquality |> sort(c())
 ```

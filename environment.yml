@@ -1,45 +1,48 @@
 name: bio
 channels:
-  - bioconda
   - conda-forge
+  - bioconda
+  - defaults
 dependencies:
-  - aria2
-  - bcftools
-  - bedtools
-  - bio
-  - bioawk
-  - biopython
   - blast
-  - bowtie2
-  - bwa
-  - csvkit
-  - csvtk
-  - datamash
-  - fastp
-  - fastqc
-  - hisat2
-  - jq
-  - jupyter
-  - jupyterlab
-  - mafft
-  - make>4
-  - minimap2
-  - ncbi-datasets-cli
-  - pandas
-  - parallel
-  - perl-text-csv
-  - pip
-  - polars
-  - python==3.14.6
-  - refgenie
-  - samtools>=1.14
-  - scipy
-  - seqkit
-  - seqtk
-  - snpeff==5.0
-  - subread
-  - trimmomatic
+  - samtools[version='>=1.14']
+  - bedtools
   - ucsc-bedgraphtobigwig
+  - jupyter
+  - biopython
   - wget
-  - pip:
-    - jupyterlab-quarto==0.3.5
+  - datamash
+  - perl-text-csv
+  - seqkit
+  - pip
+  - mafft
+  - jq
+  - snpeff=5.0
+  - seqtk
+  - make[version='>4']
+  - csvtk
+  - bcftools
+  - scipy
+  - csvkit
+  - minimap2
+  - parallel
+  - bwa
+  - hisat2
+  - bowtie2
+  - ncbi-datasets-cli
+  - subread
+  - pandas
+  - fastp
+  - python=3.12.13
+  - bioawk
+  - fastqc
+  - trimmomatic
+  - aria2
+  - bio
+  - refgenie
+  - gtfparse
+  - polars-runtime-64
+  - polars
+  - jupyterlab
+  - gffutils
+prefix: /opt/homebrew/Caskroom/miniforge/base/envs/bio

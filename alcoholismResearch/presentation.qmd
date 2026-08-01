@@ -1,0 +1,44 @@
+---
+title: "The Genetics of AD"
+author: "John Lockwood"
+format: revealjs
+---
+
+## Overview
+
+- Bioinformatics of AD
+
+  - Some basic definitions
+
+  - Causes
+
+  - Effects
+
+- Simplified Overview
+
+## Some basic definitions...
+
+A really (really!) short course in biology taught by an amateur.
+
+## Genes and the Genome
+
+### The Genome
+
+- Imagine a book written on a long string of beads (DNA is double stranded)
+- Individual beads (letters of the book) are called nucleotides or bases.
+
+## More definitions
+
+Central Dogma:
+
+$\boxed{ \text{DNA (the genome)}} \rightarrow \boxed{\text{Expression:  RNA} \rightarrow \text{ Proteins}}$
+
+- DNA almost everywhere.
+
+- What gets expressed changes depending on:
+
+  - cell type
+  - stage of development
+  - environment (e.g. stress, chemicals ingested)
+
+## Additional Resources

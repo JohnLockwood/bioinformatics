@@ -13,3 +13,4 @@ renv/staging/
 **/*.gtf
 **/biostar_handbook_books/
 data/
+**/*.ipynb_checkpoints

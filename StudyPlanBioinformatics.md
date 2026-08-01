@@ -1,17 +1,25 @@
 # Study Plan for Bioinformatics
 
-## Bioinformatics tasks 
+## Current Focus
+Back to [[dataFrames.qmd|Data Frames and Tibbles]] and 
 
-* Set up refgenie based on this ([private link](https://gemini.google.com/app/2fe64383b9e6b275)).  Write an article on how to use.
+## Next Day
+
+Begin by rereading [Biofetch](https://www.biostarhandbook.com/bio-fetch.html) and the following pages.- Entrez tool is another thing to document. Yikes.  But can do biopython instead.  🕳️🐇
+## Active Project
+
 * Begin a slide show in alcoholismResearch. Review notes to date and flesh out beginning of this.
+## Future Bioinformatics projects
+
 * Work through other info on Biostar Handbook -- e.g. human genome index files, NCBI index
+* For the R and stats subproject, in addition to continuing through the book, a tibble based on $BIO_DATA/hg38.ncbiRefSeq.gtf.  Do some interesting analyses, like how many distinct genes, see if we can find CDS segments, etc.
 ## Study Plan Overview
 
 This is a **PRELIMINARY** study plan.
 
 I currently envision a two-pronged approach:
 
-1) ***Get an overview of the field***.  See Main Text and Supplemental Texts section below.  Especially when using the Biostart handbook, practice using the tools (hacking), most likely in QMD notebooks but also in Makefiles or Taskfiles or the like plus Python source as appropriate. 
+1) ***Get an overview of the field***.  See Main Text and Supplemental Texts section below.  Especially when using the Biostar handbook, practice using the tools (hacking), most likely in QMD notebooks but also in Makefiles or Taskfiles or the like plus Python source as appropriate. 
 2) ***Do Exploratory Research in Alcohol Use Disorder*** This is a topic of interest, and we can use it to practice in the context of a real project.
 3) Improve my R Skills, see Modern Statistics with R. 
 ### Main Texts
@@ -35,3 +43,7 @@ Possibilities include:
 * Work through Discovering Statistics Using R.  The edition I have is out of date, but cost $70 or more back then, and the new edition costs that now.  Out of date is better than ignorant.  You can get a lot of the source for the updated book [for free, here](https://www.discovr.rocks/)
 * Take Harvard/EdX's course [Data Analysis for Life Sciences](https://www.edx.org/certificates/professional-certificate/harvardx-data-analysis-for-life-sciences).  This was a [Gemini recommendation](https://gemini.google.com/app/2f5aa9c02d73575b)
 * ChatGPT's [recommendation](https://chatgpt.com/c/6a37c788-6d84-83ea-9fff-59a9463e51bd) was more tilted toward Python, which is where a lot of the work seems to be headed currently.  See especially the section "If I were starting today".  Especially relevant were the idea of using Pevzner's Bioinformatics Algorithms (copy saved in Thriftbooks, but it's heavy on algorithms, so holiding off and it may be sold out of my cart -- but it's also available on [Coursera](https://www.coursera.org/specializations/bioinformatics)) and using [Rosalind](https://rosalind.info).  Registered using BioJohnsin username.
+
+## Deferred/Abandoned
+
+* Set up refgenie based on this ([private link](https://gemini.google.com/app/2fe64383b9e6b275)).  Write an article on how to use.  Abandoned because Refgenie not unpacking files.  Mac security issue?  Moving on rather than wasting a day.
