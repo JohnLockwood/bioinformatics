@@ -1,16 +1,17 @@
 ---
-title: "The Genetics of AD"
-author: "John Lockwood"
+title: The Bioinformatics of Alcoholism
+author: John Lockwood
 format: revealjs
 ---
 
 ## Overview
 
-- Bioinformatics of AD
+- Bioinformatics of Alcoholism (Alcohol Use Disorder, Alcohol Dependence)
 
-  - Some basic definitions
+  - Some basic definitions  
+		(Biology 101 condensed into 5-10 minutes)
 
-  - Causes
+  - Genetic "Causes" or Alcoholism
 
   - Effects
 
@@ -18,27 +19,61 @@ format: revealjs
 
 ## Some basic definitions...
 
-A really (really!) short course in biology taught by an amateur.
+A really (really!) short course in biology taught by 
 
-## Genes and the Genome
+## Genes and the genome
 
-### The Genome
+***The Genome***
 
+- The whole DNA that you need to create an organism.
 - Imagine a book written on a long string of beads (DNA is double stranded)
-- Individual beads (letters of the book) are called nucleotides or bases.
+- Individual beads (letters of the book) are called nucleotides or bases.  For a human you need about 3.2 billion letters.
+- Names of the bases start with letters, ACTG.
+## Gene:  
+
+* A part of the genome (call it a page from the book or a chapter) that contains the code for "a single protein."
 
 ## More definitions
 
-Central Dogma:
+***Central Dogma of Biology:***
 
 $\boxed{ \text{DNA (the genome)}} \rightarrow \boxed{\text{Expression:  RNA} \rightarrow \text{ Proteins}}$
 
 - DNA almost everywhere.
-
 - What gets expressed changes depending on:
-
   - cell type
   - stage of development
   - environment (e.g. stress, chemicals ingested)
+## How this looks ("sequenced DNA")
 
-## Additional Resources
+The Human Genome Project was an attempt to translate this string of biochemical "nucleotides" (all 3.2 billion) into letters representing each one. "Completed" in 2000-2003.
+
+How it looks (for part of one gene):
+
+> >NP_000798.2 {"type": "CDS", "gene": "GABRA2", "product": "gamma-aminobutyric acid receptor subunit alpha-2 isoform a precursor", ...}
+ATGAAGACAAAATTGAACATCTACAACATGCAGTTCCTGCTTTTTGTTTTCTTGGTGTGG
+GACCCTGCCAGGTTGGTGCTGGCTAACATCCAAGAAGATGAGGCTAAAAATAACATTACC 
+... + 485 more lines !
+
+## Causes:  Genetics of Alcoholism
+
+It's estimated that genetics  accounts for some 50-60% of the risk of developing alcoholism, with 40-50% of risk coming from environment: "childhood trauma, chronic stress, peer groups, and early exposure to drinking."
+
+***IMPORTANT:  We are not talking about a single alcohol gene here.***
+
+Alcoholism is **Polygenic** (Caused by many genes).  Most traits and diseases are polygenic.
+
+## Other Examples
+* Polygenic traits and diseases:  Heart disease, Height, Type 2 Diabetes, Impulsiveness, High Blood Pressure, Diabetes, Schizophrenia, Bipolar Disorder etc. etc.  Most genetic conditions/traits are like this.
+* Some monogenic diseases:  Sickle Cell Disease, Tay Sachs, Cystic Fibrosis.
+* In the case of alcoholism, about 100 or more different genes affect your level of susceptibility.  (As of now -- we may learn more)
+
+## Some of the Genes Involved In Alcoholism
+
+* Variations in genes that relate to how fast body metabolizes alcohol.  Two variations (more common in Asian populations) cause either an unpleasant flushing response or people get extremely ill.  (Very much like Antabuse).  These genes are considered *protective*.
+* 
+## Effects (How the Body Responds)
+
+## Additional resources
+
+* Something something.
