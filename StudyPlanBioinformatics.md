@@ -24,7 +24,7 @@ I currently envision a two-pronged approach:
 3) Improve my R Skills, see Modern Statistics with R. 
 ### Main Texts
 
-* The [Biostar Handbook](https://biostar.myshopify.com/).  $35.00 with two year access, $25.00 for one month.  Go through this and the associated course, FastTrack Bioinformatics.  Just reading the titles has helped me already.  Should do this 1st.  Notes are in [[biostar.qmd|Biostar Notes]].
+* The [Biostar Handbook](https://biostar.myshecho 'export PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"' >> ~/.zprofileopify.com/).  $35.00 with two year access, $25.00 for one month.  Go through this and the associated course, FastTrack Bioinformatics.  Just reading the titles has helped me already.  Should do this 1st.  Notes are in [[biostar.qmd|Biostar Notes]].
 * [Modern Statistics With R](https://www.modernstatisticswithr.com/) Notes are in [[rAndStatistics.qmd|R and Statistics]].
 
 
