@@ -94,10 +94,20 @@ to drink more than others.  Early drinking in turn itself is a risk factor.
 Amniobutyric Acid.
 * For our purposes what's important is that it's a neurotransmitter, naturally occurring in our brains, that:
   * Inhibits nerve cells (makes it less likely that they'll fire).
-  
-  
+  * Because of this, has a calming effect (anti-anxiety or "anti-anxiolytic") effect.
+* It has the opposite effect of glutamate, an "excitatory" neurotransmitter, which makes it **more** likely for a neuron to fire.
 
 
+## GABA Receptors
+
+* Live primarily in the cell membrane of nerve cells.
+* Are composed of different subunits.
+* Slow-acting subunits were important in human evolution, and in drugs that treat alcoholism.
+* Variation in the fast-acting ($\alpha$) subunit puts you at greater risk of alcoholism.
+
+## One Picture ***Plus*** One Thousand words
+
+![Gaba Receptor](GabaReceptor.jpg)
 
 ## Effects (How the Body Responds)
 
