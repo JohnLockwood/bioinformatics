@@ -77,7 +77,7 @@ Alcoholism is **Polygenic** (Caused by many genes).  Most traits and diseases ar
 ## Genes Involved In Alcoholism (Part I)
 
 * Variations in genes that relate to how the body metabolizes alcohol.  Two variations (more common in Asian populations) cause either an unpleasant flushing response or people get extremely ill.  
-* This happens because alcohol metabolism is a two-part process.  First, a toxic byproduct is created, then in the second phase, it is broken down.  People with this variation have lost function in the second phase, so the result is that their body naturally functions like they've taken antabuse.  These genes are considered *protective*.
+* This happens because alcohol metabolism is a two-part process.  First, a toxic byproduct is created, then in the second phase, it is broken down.  People with this variation have lost function in the second phase, so the result is that their body naturally functions like they've taken Antabuse.  These genes are considered *protective*.
 
 ## Alcohol Metabolism (Continued)
 
@@ -104,7 +104,7 @@ to drink more than others.  Early drinking in turn itself is a risk factor.
 * We're not biochemists, but what the heck:  GABA stands for $\gamma$ (Gamma) Aminobutyric Acid.
 * For our purposes what's important is that it's a neurotransmitter, naturally occurring in our brains, that:
   * Inhibits nerve cells (makes it less likely that they'll fire).
-  * Because of this, has a calming effect (anti-anxiety or "anxiolytic") effect.
+  * Because of this, has a calming effect.  That is, it has an anti-anxiety or "anxiolytic" effect.
 * It has the opposite effect of glutamate, an "excitatory" neurotransmitter, which makes it **more** likely for a neuron to fire.
 
 
@@ -136,7 +136,7 @@ to drink more than others.  Early drinking in turn itself is a risk factor.
 
 ## GABA in the Midbrain During Binge Drinking
 
-Binge drinking (in everybody) causes GABA to be "co-released" when dopamine is released in the midbrain.  In this case, dopamine acts as a motivator to start or continue drinking, and the GABA co-release acts as GABA always does, to inhibit a response.  However, variations in one of the enzymes involved in alcohol metabolism in the liver also regulate how much GABA is produced in the midbrain, which is also producing dopamine. For people with this variation, the dopamine is saying "keep drinking", and because there's less GABA being co-released the brakes in the system have failed.
+Binge drinking (in everybody) causes GABA to be "co-released" when dopamine is released in the midbrain.  In this case, dopamine acts as a motivator to start or continue drinking, and the GABA co-release acts as GABA always does, to inhibit a response.  However, variations in one of the enzymes involved in alcohol metabolism in the liver also exist in the midbrain.  There, they regulate how much GABA is produced in the midbrain, which is also producing dopamine. For people with this variation, the dopamine is saying "keep drinking", and because there's less GABA being co-released the brakes in the system have failed.
 
 ## Effects (How the Body Responds)
 
